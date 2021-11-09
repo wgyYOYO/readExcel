@@ -87,7 +87,7 @@ public class ExcelUtils {
         Sheet sheet = workbook.getSheetAt(0);
         System.out.println(sheet.getLastRowNum());
         //获取 excel 第一行数据（表头）
-        Row row = sheet.getRow(0);
+        Row row = sheet.getRow(1);
         //存放表头信息
         List<String> set = new ArrayList<>();
         //算下有多少列
@@ -179,7 +179,7 @@ public class ExcelUtils {
         List<List<String>> resList = new ArrayList<>();
         //负责标记检测到空行时,跳过
         boolean flag = false;
-        for (int i = 1; i <= rowNum; i++) {
+        for (int i = 2; i <= rowNum; i++) {
             //默认认为此行为空行
             flag = true;
             Row row = sheet.getRow(i);
