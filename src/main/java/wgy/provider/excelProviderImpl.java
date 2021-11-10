@@ -50,8 +50,8 @@ public class excelProviderImpl implements excelProvider {
 
     @ApiOperation(value = "通过用户名查询用户信息", notes = "通过用户名查询用户信息", produces = "application/json")
 //    @ApiImplicitParam(name = "name", value = "用户名", paramType = "query", required = true, dataType = "String")
-    @RequestMapping(value = "/upload", method = RequestMethod.GET)
-    public Response<String> upload() throws Exception {
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public Response<String> upload(@RequestParam("files") MultipartFile[] file) throws Exception {
         Response<String> response = new Response<>();
         List<User> date = new read().getDate();
         System.out.println("掉到了");
